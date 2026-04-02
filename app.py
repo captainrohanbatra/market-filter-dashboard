@@ -222,6 +222,13 @@ def analyze(close):
         return dict(error=str(e))
 
 # ── Row builder ────────────────────────────────────────────────────
+ROW_TINT = {
+    "ON":      "background:#f0fdf4",
+    "OFF":     "background:#fef2f2",
+    "TOPPING": "background:#fffbeb",
+    "BASING":  "background:#faf5ff",
+}
+
 def build_row(name, ticker, currency, is_inv, is_lev, note, d):
     if d is None or d.get("error"):
         err = (d.get("error","") if d else "No data")[:40]
@@ -240,7 +247,8 @@ def build_row(name, ticker, currency, is_inv, is_lev, note, d):
     pct_s   = f"{'+' if d['pct']>=0 else ''}{d['pct']:.1f}%"
     ac      = accent(d['inv'])
 
-    return f"""<tr>
+    tint = ROW_TINT.get(d['inv'], "")
+    return f"""<tr style="{tint}">
 <td>
   <div style="display:flex;align-items:center">
     <span class="dot" style="background:{ac}"></span>
