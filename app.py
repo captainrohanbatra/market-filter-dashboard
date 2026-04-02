@@ -70,7 +70,7 @@ html, body, [class*="css"], .stApp {
 .b-off { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
 .b-top { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
 .b-bas { background: #ede9fe; color: #6d28d9; border: 1px solid #ddd6fe; }
-.b-s   { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; font-size: 10px; }
+.b-s   { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; font-size: 11px; }
 .b-tw  { background: #f9fafb; color: #9ca3af; border: 1px solid #f3f4f6; font-size: 10px; }
 .b-tn  { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 10px; }
 .b-ts  { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; font-size: 10px; }
@@ -105,7 +105,7 @@ GLOBAL_ASSETS = [
     ("NSE Nifty 500", "^CRSLDX",   "INR", False, False, "India market filter"),
     ("S&P 500",       "^GSPC",     "USD", False, False, ""),
     ("NASDAQ 100",    "^NDX",      "USD", False, False, ""),
-    ("TOPIX",         "^TOPX",     "JPY", False, False, "Japan broad market"),
+    ("TOPIX",         "1306.T",    "JPY", False, False, "Japan broad market"),
     ("Hang Seng",     "^HSI",      "HKD", False, False, ""),
     ("CSI 300",       "000300.SS", "CNY", False, False, "Mainland China"),
     ("Gold (USD)",    "GC=F",      "USD", False, False, ""),
@@ -248,6 +248,7 @@ def build_row(name, ticker, currency, is_inv, is_lev, note, d):
 
     tint = ROW_TINT.get(d['inv'], "")
     trend_cell = f'<span class="b {tb(d["trend"])}">{d["trend"]}</span>' if d['inv'] == "ON" else '<span style="font-size:12px;color:#d1d5db">&mdash;</span>'
+    note_line = f'<div class="a-tick" style="color:#6b7280;margin-top:0">{note}</div>' if note else ''
     return f"""<tr style="{tint}">
 <td>
   <div style="display:flex;align-items:center">
@@ -255,6 +256,7 @@ def build_row(name, ticker, currency, is_inv, is_lev, note, d):
     <div>
       <div class="a-name">{name}{flags}</div>
       <div class="a-tick">{ticker} &middot; {currency}</div>
+      {note_line}
     </div>
   </div>
 </td>
@@ -262,7 +264,7 @@ def build_row(name, ticker, currency, is_inv, is_lev, note, d):
 <td class="{chg_cls}">{chg_arr} {abs(d['wchg']):.1f}%</td>
 <td><span class="b {b(d['inv'])}">{d['inv']}</span></td>
 <td><span class="b {b(d['tra'])}">{d['tra']}</span></td>
-<td><span class="b b-s">S{d['stage']}</span></td>
+<td><span class="b b-s">Stage {d['stage']}</span></td>
 <td>{trend_cell}</td>
 <td class="ma-val">{pct_s} {ma_arr} &middot; {d['date']}</td>
 </tr>"""
