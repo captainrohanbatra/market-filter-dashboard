@@ -105,10 +105,9 @@ GLOBAL_ASSETS = [
     ("NSE Nifty 500", "^CRSLDX",   "INR", False, False, "India market filter"),
     ("S&P 500",       "^GSPC",     "USD", False, False, ""),
     ("NASDAQ 100",    "^NDX",      "USD", False, False, ""),
-    ("Nikkei 225",    "^N225",     "JPY", False, False, ""),
+    ("TOPIX",         "^TOPX",     "JPY", False, False, "Japan broad market"),
     ("Hang Seng",     "^HSI",      "HKD", False, False, ""),
     ("CSI 300",       "000300.SS", "CNY", False, False, "Mainland China"),
-    ("DFM Dubai",     "^DFMGI",    "AED", False, False, "Dubai Financial Market"),
     ("Gold (USD)",    "GC=F",      "USD", False, False, ""),
     ("Gold (MCX)",    "MCX_GOLD",  "INR", False, False, "GC=F x USDINR"),
     ("Oil WTI",       "CL=F",      "USD", False, False, ""),
@@ -248,6 +247,7 @@ def build_row(name, ticker, currency, is_inv, is_lev, note, d):
     ac      = accent(d['inv'])
 
     tint = ROW_TINT.get(d['inv'], "")
+    trend_cell = f'<span class="b {tb(d["trend"])}">{d["trend"]}</span>' if d['inv'] == "ON" else '<span style="font-size:12px;color:#d1d5db">&mdash;</span>'
     return f"""<tr style="{tint}">
 <td>
   <div style="display:flex;align-items:center">
@@ -263,7 +263,7 @@ def build_row(name, ticker, currency, is_inv, is_lev, note, d):
 <td><span class="b {b(d['inv'])}">{d['inv']}</span></td>
 <td><span class="b {b(d['tra'])}">{d['tra']}</span></td>
 <td><span class="b b-s">S{d['stage']}</span></td>
-<td><span class="b {tb(d['trend'])}">{d['trend']}</span></td>
+<td>{trend_cell}</td>
 <td class="ma-val">{pct_s} {ma_arr} &middot; {d['date']}</td>
 </tr>"""
 
