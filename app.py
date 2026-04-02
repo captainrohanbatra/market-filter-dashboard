@@ -75,7 +75,7 @@ GLOBAL_ASSETS = [
     ("NSE Nifty 500", "^CRSLDX",   "INR", False, False, ""),
     ("S&P 500",       "^GSPC",     "USD", False, False, ""),
     ("NASDAQ 100",    "^NDX",      "USD", False, False, ""),
-    ("Nikkei 225",    "^N225",     "JPY", False, False, ""),
+    ("TOPIX",         "^TOPIX",    "JPY", False, False, ""),
     ("Hang Seng",     "^HSI",      "HKD", False, False, ""),
     ("CSI 300",       "000300.SS", "CNY", False, False, ""),
     ("Gold (USD)",    "GC=F",      "USD", False, False, ""),
