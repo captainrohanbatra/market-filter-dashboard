@@ -22,82 +22,85 @@ html, body, [class*="css"], .stApp {
     background-color: #f8f9fa !important;
 }
 .main, .block-container { background-color: #f8f9fa !important; }
-.block-container { padding: 2rem 2.5rem !important; max-width: 1600px !important; }
+.block-container { padding: 2rem 2.5rem !important; max-width: 1400px !important; }
 
-.db-title {
-    font-size: 28px; font-weight: 700; color: #111827;
-    letter-spacing: -0.5px; margin-bottom: 3px;
-}
-.db-sub {
-    font-size: 13px; color: #6b7280; margin-bottom: 28px;
-    font-family: 'JetBrains Mono', monospace;
-}
+.db-title { font-size: 26px; font-weight: 700; color: #111827; letter-spacing: -0.5px; margin-bottom: 3px; }
+.db-sub { font-size: 12px; color: #9ca3af; margin-bottom: 24px; font-family: 'JetBrains Mono', monospace; }
 
 .sum-card {
     background: #ffffff; border: 1px solid #e5e7eb;
-    border-radius: 12px; padding: 16px 20px; text-align: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    border-radius: 10px; padding: 14px 18px; text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
-.sum-label { font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; }
-.sum-val { font-size: 32px; font-weight: 700; margin-top: 4px; }
+.sum-label { font-size: 10px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.8px; font-weight: 600; }
+.sum-val { font-size: 30px; font-weight: 700; margin-top: 3px; }
 
 .section-hdr {
-    font-size: 11px; color: #9ca3af; text-transform: uppercase;
+    font-size: 10px; color: #9ca3af; text-transform: uppercase;
     letter-spacing: 1.5px; font-weight: 700;
-    padding: 20px 0 12px; border-bottom: 1px solid #e5e7eb; margin-bottom: 16px;
+    padding: 20px 0 10px; border-bottom: 1px solid #e5e7eb; margin-bottom: 0;
 }
 
-.card {
-    background: #ffffff; border: 1px solid #e5e7eb;
-    border-radius: 14px; padding: 16px 18px 14px 20px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    margin-bottom: 4px; position: relative; overflow: hidden;
+/* ── Main data table ── */
+.data-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.data-table thead th {
+    background: #f9fafb; text-align: left; padding: 9px 14px;
+    font-size: 10px; color: #6b7280; text-transform: uppercase;
+    letter-spacing: 0.7px; font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
 }
-.card-bar {
-    position: absolute; top: 0; left: 0;
-    width: 4px; height: 100%;
+.data-table tbody tr { border-bottom: 0.5px solid #f3f4f6; transition: background 0.1s; }
+.data-table tbody tr:hover { background: #f9fafb; }
+.data-table tbody tr:last-child { border-bottom: none; }
+.data-table td { padding: 7px 14px; vertical-align: middle; }
+
+.sec-row td { background: #f9fafb; font-size: 9px; color: #9ca3af; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; padding: 6px 14px; }
+
+.a-name { font-size: 13px; font-weight: 600; color: #111827; }
+.a-tick { font-size: 10px; color: #9ca3af; font-family: 'JetBrains Mono', monospace; margin-top: 1px; }
+.a-price { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: #111827; white-space: nowrap; }
+.up { color: #059669; font-size: 11px; font-weight: 500; white-space: nowrap; }
+.dn { color: #dc2626; font-size: 11px; font-weight: 500; white-space: nowrap; }
+.ma-val { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #6b7280; white-space: nowrap; }
+
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 7px; vertical-align: middle; flex-shrink: 0; }
+
+.b { display: inline-block; padding: 3px 8px; border-radius: 5px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.b-on  { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+.b-off { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
+.b-top { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+.b-bas { background: #ede9fe; color: #6d28d9; border: 1px solid #ddd6fe; }
+.b-s   { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; font-size: 10px; }
+.b-tw  { background: #f9fafb; color: #9ca3af; border: 1px solid #f3f4f6; font-size: 10px; }
+.b-tn  { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 10px; }
+.b-ts  { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; font-size: 10px; }
+.b-te  { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; font-size: 10px; }
+.b-inv { background: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; font-size: 9px; padding: 2px 6px; }
+.b-lev { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 9px; padding: 2px 6px; }
+
+/* ── Legend table ── */
+.legend-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e5e7eb; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.legend-table thead th {
+    background: #f9fafb; text-align: left; padding: 9px 16px;
+    font-size: 10px; color: #6b7280; text-transform: uppercase;
+    letter-spacing: 0.7px; font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
 }
-.card-name { font-size: 15px; font-weight: 700; color: #111827; margin-bottom: 1px; }
-.card-ticker { font-size: 11px; color: #9ca3af; font-family: 'JetBrains Mono', monospace; margin-bottom: 10px; }
-.card-note { font-size: 11px; color: #d1d5db; margin-top: -8px; margin-bottom: 8px; }
-.card-price { font-size: 22px; font-weight: 700; color: #111827; font-family: 'JetBrains Mono', monospace; margin-bottom: 2px; }
-.chg-up { font-size: 13px; color: #059669; font-weight: 500; margin-bottom: 12px; }
-.chg-dn { font-size: 13px; color: #dc2626; font-weight: 500; margin-bottom: 12px; }
+.legend-table tbody tr { border-bottom: 0.5px solid #f3f4f6; }
+.legend-table tbody tr:last-child { border-bottom: none; }
+.legend-table td { padding: 9px 16px; vertical-align: middle; font-size: 12px; }
+.legend-table .cat-row td { background: #f9fafb; font-size: 9px; color: #9ca3af; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; padding: 6px 16px; }
+.leg-desc { color: #374151; font-size: 12px; }
+.leg-action { color: #6b7280; font-size: 11px; font-style: italic; }
 
-.badges { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
-.lbl { font-size: 10px; color: #9ca3af; font-weight: 600; letter-spacing: 0.5px; }
-
-.b { display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; letter-spacing: 0.3px; }
-.b-on      { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
-.b-off     { background: #fee2e2; color: #b91c1c; border: 1px solid #fecaca; }
-.b-top     { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
-.b-bas     { background: #ede9fe; color: #6d28d9; border: 1px solid #ddd6fe; }
-
-.b-stage   { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; font-size: 11px; padding: 4px 8px; }
-.b-weak    { background: #f9fafb; color: #9ca3af; border: 1px solid #f3f4f6; font-size: 11px; }
-.b-normal  { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 11px; }
-.b-strong  { background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; font-size: 11px; }
-.b-ext     { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; font-size: 11px; }
-.b-inv     { background: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; font-size: 10px; padding: 3px 7px; }
-.b-lev     { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 10px; padding: 3px 7px; }
-
-.vs-ma { font-size: 12px; color: #9ca3af; font-family: 'JetBrains Mono', monospace; margin-top: 6px; }
-.err-msg { font-size: 12px; color: #dc2626; margin-top: 8px; }
-
-.legend {
-    display: flex; gap: 20px; flex-wrap: wrap;
-    margin: 12px 0 4px; font-size: 12px; color: #6b7280;
-}
-.leg-item { display: flex; align-items: center; gap: 6px; }
-.leg-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
-
-.footer { font-size: 11px; color: #d1d5db; text-align: right; margin-top: 24px; font-family: 'JetBrains Mono', monospace; }
+.footer { font-size: 10px; color: #d1d5db; text-align: right; margin-top: 20px; font-family: 'JetBrains Mono', monospace; line-height: 1.8; }
 
 div[data-testid="column"] { padding: 0 5px !important; }
+div[data-testid="stHorizontalBlock"] { gap: 0 !important; }
 </style>
 """, unsafe_allow_html=True)
 
-# ── Asset definitions ──────────────────────────────────────────────
+# ── Assets ─────────────────────────────────────────────────────────
 GLOBAL_ASSETS = [
     ("NSE Nifty 500", "^CRSLDX",   "INR", False, False, "India market filter"),
     ("S&P 500",       "^GSPC",     "USD", False, False, ""),
@@ -105,7 +108,7 @@ GLOBAL_ASSETS = [
     ("Nikkei 225",    "^N225",     "JPY", False, False, ""),
     ("Hang Seng",     "^HSI",      "HKD", False, False, ""),
     ("CSI 300",       "000300.SS", "CNY", False, False, "Mainland China"),
-    ("DFM Dubai",     "^DFMGI",   "AED", False, False, "Dubai Financial Market"),
+    ("DFM Dubai",     "^DFMGI",    "AED", False, False, "Dubai Financial Market"),
     ("Gold (USD)",    "GC=F",      "USD", False, False, ""),
     ("Gold (MCX)",    "MCX_GOLD",  "INR", False, False, "GC=F x USDINR"),
     ("Oil WTI",       "CL=F",      "USD", False, False, ""),
@@ -133,8 +136,8 @@ ETF_ASSETS = [
     ("TBT",  "TBT",  "USD", True,  True,  "2x Inverse Long Bonds"),
 ]
 
-INV_PERIOD = 30
-TRA_PERIOD = 10
+INV_PERIOD   = 30
+TRA_PERIOD   = 10
 SLOPE_WEAK   = 0.20
 SLOPE_NORMAL = 0.50
 EXTENDED_PCT = 20.0
@@ -144,30 +147,30 @@ def wma(series, period):
     w = np.arange(1, period + 1, dtype=float)
     return series.rolling(period).apply(lambda x: np.dot(x, w) / w.sum(), raw=True)
 
-def stage(price, ma30, slope):
+def get_stage(price, ma30, slope):
     a, r = price > ma30, slope > 0
-    if a and r:  return 2
-    if a and not r: return 3
-    if not a and r: return 1
+    if a and r:      return 2
+    if a and not r:  return 3
+    if not a and r:  return 1
     return 4
 
 def inv_label(s): return {2:"ON", 3:"TOPPING", 1:"BASING", 4:"OFF"}[s]
 
 def tra_label(price, ma10, slope10):
     a, r = price > ma10, slope10 > 0
-    if a and r:  return "ON"
-    if a and not r: return "TOPPING"
-    if not a and r: return "BASING"
+    if a and r:      return "ON"
+    if a and not r:  return "TOPPING"
+    if not a and r:  return "BASING"
     return "OFF"
 
-def trend(slope_val, pct):
+def trend_label(slope_val, pct):
     if pct >= EXTENDED_PCT: return "EXTENDED"
     s = abs(slope_val)
     if s < SLOPE_WEAK:   return "WEAK"
     if s < SLOPE_NORMAL: return "NORMAL"
     return "STRONG"
 
-def fmt_price(p):
+def fmt(p):
     if p >= 10000: return f"{p:,.0f}"
     if p >= 100:   return f"{p:,.1f}"
     if p >= 1:     return f"{p:,.2f}"
@@ -176,11 +179,11 @@ def fmt_price(p):
 def accent(inv):
     return {"ON":"#16a34a","OFF":"#dc2626","TOPPING":"#d97706","BASING":"#7c3aed"}.get(inv,"#9ca3af")
 
-def b_cls(status):
-    return {"ON":"b-on","OFF":"b-off","TOPPING":"b-top","BASING":"b-bas"}.get(status,"b-stage")
+def b(status):
+    return {"ON":"b-on","OFF":"b-off","TOPPING":"b-top","BASING":"b-bas"}.get(status,"b-s")
 
-def t_cls(t):
-    return {"WEAK":"b-weak","NORMAL":"b-normal","STRONG":"b-strong","EXTENDED":"b-ext"}.get(t,"b-weak")
+def tb(t):
+    return {"WEAK":"b-tw","NORMAL":"b-tn","STRONG":"b-ts","EXTENDED":"b-te"}.get(t,"b-tw")
 
 # ── Data ───────────────────────────────────────────────────────────
 @st.cache_data(ttl=3600)
@@ -194,8 +197,8 @@ def fetch(ticker):
 @st.cache_data(ttl=3600)
 def fetch_mcx():
     try:
-        gc  = yf.download("GC=F",     period="130wk", interval="1wk", progress=False, auto_adjust=True)['Close'].squeeze().dropna()
-        fx  = yf.download("USDINR=X", period="130wk", interval="1wk", progress=False, auto_adjust=True)['Close'].squeeze().dropna()
+        gc = yf.download("GC=F",     period="130wk", interval="1wk", progress=False, auto_adjust=True)['Close'].squeeze().dropna()
+        fx = yf.download("USDINR=X", period="130wk", interval="1wk", progress=False, auto_adjust=True)['Close'].squeeze().dropna()
         return (gc.reindex(fx.index, method='ffill') * fx).dropna()
     except: return None
 
@@ -210,61 +213,167 @@ def analyze(close):
         s10  = float((ma10.iloc[-1]-ma10.iloc[-2])/ma10.iloc[-2]*100) if len(ma10.dropna())>=2 else 0.0
         pct  = (p-m30)/m30*100
         wchg = float((close.iloc[-1]-close.iloc[-2])/close.iloc[-2]*100) if len(close)>=2 else 0.0
-        st_  = stage(p, m30, s30)
+        st_  = get_stage(p, m30, s30)
         return dict(price=p, ma30=m30, ma10=m10, slope30=s30, slope10=s10,
                     pct=pct, wchg=wchg, stage=st_,
                     inv=inv_label(st_), tra=tra_label(p,m10,s10),
-                    trend=trend(s30,pct), date=close.index[-1].strftime("%d %b %Y"), error=None)
+                    trend=trend_label(s30,pct), date=close.index[-1].strftime("%d %b %Y"), error=None)
     except Exception as e:
         return dict(error=str(e))
 
-# ── Card renderer ──────────────────────────────────────────────────
-def card(name, ticker, currency, is_inv, is_lev, note, d):
+# ── Row builder ────────────────────────────────────────────────────
+def build_row(name, ticker, currency, is_inv, is_lev, note, d):
     if d is None or d.get("error"):
-        err = (d.get("error","") if d else "No data")[:50]
-        html = f"""<div class="card">
-<div class="card-bar" style="background:#e5e7eb"></div>
-<div class="card-name">{name}</div>
-<div class="card-ticker">{ticker} &middot; {currency}</div>
-<div class="err-msg">&#9888; {err}</div>
-</div>"""
-        st.markdown(html, unsafe_allow_html=True)
-        return
+        err = (d.get("error","") if d else "No data")[:40]
+        return f"""<tr>
+<td><div class="a-name">{name}</div><div class="a-tick">{ticker}</div></td>
+<td colspan="7" style="font-size:11px;color:#dc2626">&#9888; {err}</td>
+</tr>"""
 
-    price_s = fmt_price(d['price'])
-    chg_cls = "chg-up" if d['wchg'] >= 0 else "chg-dn"
+    flags = ""
+    if is_inv: flags += ' <span class="b b-inv">INV</span>'
+    if is_lev: flags += ' <span class="b b-lev">3x</span>'
+
+    chg_cls = "up" if d['wchg'] >= 0 else "dn"
     chg_arr = "&#9650;" if d['wchg'] >= 0 else "&#9660;"
-    chg_s   = f"{chg_arr} {abs(d['wchg']):.1f}% wk"
     ma_arr  = "&#8593;" if d['slope30'] > 0 else "&#8595;"
     pct_s   = f"{'+' if d['pct']>=0 else ''}{d['pct']:.1f}%"
     ac      = accent(d['inv'])
 
-    flags = ""
-    if is_inv: flags += ' <span class="b b-inv">INVERSE</span>'
-    if is_lev: flags += ' <span class="b b-lev">LEVERAGED</span>'
+    return f"""<tr>
+<td>
+  <div style="display:flex;align-items:center">
+    <span class="dot" style="background:{ac}"></span>
+    <div>
+      <div class="a-name">{name}{flags}</div>
+      <div class="a-tick">{ticker} &middot; {currency}</div>
+    </div>
+  </div>
+</td>
+<td class="a-price">{fmt(d['price'])}</td>
+<td class="{chg_cls}">{chg_arr} {abs(d['wchg']):.1f}%</td>
+<td><span class="b {b(d['inv'])}">{d['inv']}</span></td>
+<td><span class="b {b(d['tra'])}">{d['tra']}</span></td>
+<td><span class="b b-s">S{d['stage']}</span></td>
+<td><span class="b {tb(d['trend'])}">{d['trend']}</span></td>
+<td class="ma-val">{pct_s} {ma_arr} &middot; {d['date']}</td>
+</tr>"""
 
-    note_h = f'<div class="card-note">{note}</div>' if note else ''
-
-    inv_c = b_cls(d['inv'])
-    tra_c = b_cls(d['tra'])
-    tr_c  = t_cls(d['trend'])
-
-    html = f"""<div class="card">
-<div class="card-bar" style="background:{ac}"></div>
-<div class="card-name">{name}{flags}</div>
-<div class="card-ticker">{ticker} &middot; {currency}</div>
-{note_h}
-<div class="card-price">{price_s}</div>
-<div class="{chg_cls}">{chg_s}</div>
-<div class="badges">
-<span class="lbl">INV</span><span class="b {inv_c}">{d['inv']}</span>
-<span class="lbl">TRA</span><span class="b {tra_c}">{d['tra']}</span>
-<span class="b b-stage">S{d['stage']}</span>
-<span class="b {tr_c}">{d['trend']}</span>
-</div>
-<div class="vs-ma">{pct_s} vs 30wMA {ma_arr} &middot; {d['date']}</div>
-</div>"""
-    st.markdown(html, unsafe_allow_html=True)
+# ── Legend HTML ────────────────────────────────────────────────────
+LEGEND_HTML = """
+<table class="legend-table">
+  <thead>
+    <tr>
+      <th style="width:100px">Signal</th>
+      <th style="width:80px">Badge</th>
+      <th>What it means</th>
+      <th>What to do</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="cat-row"><td colspan="4">INV Filter &mdash; Based on 30-week Weighted MA</td></tr>
+    <tr>
+      <td><strong>ON</strong></td>
+      <td><span class="b b-on">ON</span></td>
+      <td class="leg-desc">Price is above its rising 30wMA. Market is in Stage 2 &mdash; a healthy uptrend is in place.</td>
+      <td class="leg-action">Conditions are right. New entries and adds are permitted.</td>
+    </tr>
+    <tr>
+      <td><strong>TOPPING</strong></td>
+      <td><span class="b b-top">TOPPING</span></td>
+      <td class="leg-desc">Price is still above the 30wMA but the MA has started flattening or declining. Stage 3 &mdash; trend losing momentum.</td>
+      <td class="leg-action">No new entries. Tighten stops on existing positions. Be alert.</td>
+    </tr>
+    <tr>
+      <td><strong>BASING</strong></td>
+      <td><span class="b b-bas">BASING</span></td>
+      <td class="leg-desc">Price is below the 30wMA but the MA is still rising. Stage 1 &mdash; building a floor, not broken yet.</td>
+      <td class="leg-action">On watch. Not actionable yet. Wait for price to reclaim the MA.</td>
+    </tr>
+    <tr>
+      <td><strong>OFF</strong></td>
+      <td><span class="b b-off">OFF</span></td>
+      <td class="leg-desc">Price is below a declining 30wMA. Stage 4 &mdash; a confirmed downtrend. The worst place to hold.</td>
+      <td class="leg-action">No entries. Capital should be in cash, gold, or inverse instruments.</td>
+    </tr>
+    <tr class="cat-row"><td colspan="4">TRA Filter &mdash; Based on 10-week Simple MA</td></tr>
+    <tr>
+      <td><strong>ON</strong></td>
+      <td><span class="b b-on">ON</span></td>
+      <td class="leg-desc">Price is above its rising 10wMA. Short-term trend is healthy.</td>
+      <td class="leg-action">Momentum is with you. Good timing for entries within a Stage 2 asset.</td>
+    </tr>
+    <tr>
+      <td><strong>TOPPING</strong></td>
+      <td><span class="b b-top">TOPPING</span></td>
+      <td class="leg-desc">Price is above the 10wMA but momentum is fading. Short-term trend rolling over.</td>
+      <td class="leg-action">Watch closely. A pullback to the 10wMA may be coming &mdash; can be a buy opportunity in strong Stage 2 assets.</td>
+    </tr>
+    <tr>
+      <td><strong>BASING</strong></td>
+      <td><span class="b b-bas">BASING</span></td>
+      <td class="leg-desc">Price has dipped below the 10wMA but MA is still rising. Short-term pullback in a longer uptrend.</td>
+      <td class="leg-action">Potential Type B setup if the asset is also Stage 2 on INV. Watch for a bounce back above the 10wMA.</td>
+    </tr>
+    <tr>
+      <td><strong>OFF</strong></td>
+      <td><span class="b b-off">OFF</span></td>
+      <td class="leg-desc">Price is below a declining 10wMA. Short-term downtrend confirmed.</td>
+      <td class="leg-action">Avoid new entries. Wait for both MAs to turn back up before acting.</td>
+    </tr>
+    <tr class="cat-row"><td colspan="4">Stage &mdash; Weinstein Stage Classification</td></tr>
+    <tr>
+      <td><strong>Stage 1</strong></td>
+      <td><span class="b b-s">S1</span></td>
+      <td class="leg-desc">Basing phase. Price is consolidating below or near a flat/rising 30wMA after a decline.</td>
+      <td class="leg-action">Watch. The setup is being built. Do not buy yet.</td>
+    </tr>
+    <tr>
+      <td><strong>Stage 2</strong></td>
+      <td><span class="b b-s">S2</span></td>
+      <td class="leg-desc">Advancing phase. Price is above a rising 30wMA. The only stage where you should hold or add.</td>
+      <td class="leg-action">The buy zone. All entries must be in Stage 2 only.</td>
+    </tr>
+    <tr>
+      <td><strong>Stage 3</strong></td>
+      <td><span class="b b-s">S3</span></td>
+      <td class="leg-desc">Topping phase. Price is still above the 30wMA but the MA is rolling over. Distribution happening.</td>
+      <td class="leg-action">Reduce positions. Tighten stops. Do not add.</td>
+    </tr>
+    <tr>
+      <td><strong>Stage 4</strong></td>
+      <td><span class="b b-s">S4</span></td>
+      <td class="leg-desc">Declining phase. Price is below a falling 30wMA. Sellers are in full control.</td>
+      <td class="leg-action">Never hold. Never buy. Exit if still in.</td>
+    </tr>
+    <tr class="cat-row"><td colspan="4">Trend Strength &mdash; Based on 30wMA Weekly Slope</td></tr>
+    <tr>
+      <td><strong>WEAK</strong></td>
+      <td><span class="b b-tw">WEAK</span></td>
+      <td class="leg-desc">30wMA rising or falling less than 0.2% per week. Trend exists but has little momentum behind it.</td>
+      <td class="leg-action">Valid but be cautious. Easy for the trend to stall or reverse.</td>
+    </tr>
+    <tr>
+      <td><strong>NORMAL</strong></td>
+      <td><span class="b b-tn">NORMAL</span></td>
+      <td class="leg-desc">30wMA moving 0.2% to 0.5% per week. A healthy, sustainable trend with good momentum.</td>
+      <td class="leg-action">Ideal conditions. Trend is strong enough to be trusted.</td>
+    </tr>
+    <tr>
+      <td><strong>STRONG</strong></td>
+      <td><span class="b b-ts">STRONG</span></td>
+      <td class="leg-desc">30wMA moving more than 0.5% per week. A powerful, fast-moving trend.</td>
+      <td class="leg-action">High conviction. Ride it but watch for EXTENDED conditions developing.</td>
+    </tr>
+    <tr>
+      <td><strong>EXTENDED</strong></td>
+      <td><span class="b b-te">EXTENDED</span></td>
+      <td class="leg-desc">Price is more than 20% above the 30wMA. The asset has moved too far too fast and is stretched.</td>
+      <td class="leg-action">Do not chase. Wait for a pullback towards the MA before entering. Consider partial profit-taking.</td>
+    </tr>
+  </tbody>
+</table>
+"""
 
 # ── Main ───────────────────────────────────────────────────────────
 def main():
@@ -275,19 +384,21 @@ def main():
 
     with st.spinner("Fetching live market data..."):
         results = {}
-        for name, ticker, cur, ii, il, note in GLOBAL_ASSETS:
+        for _, ticker, *_ in GLOBAL_ASSETS:
+            t = ticker
             if ticker == "MCX_GOLD":
                 c = fetch_mcx()
             else:
                 c = fetch(ticker)
-            results[ticker] = analyze(c) if c is not None else dict(error="Data unavailable")
+            results[t] = analyze(c) if c is not None else dict(error="Data unavailable")
 
-        for name, ticker, cur, ii, il, note in ETF_ASSETS:
+        for _, ticker, *_ in ETF_ASSETS:
             if ticker not in results:
                 c = fetch(ticker)
                 results[ticker] = analyze(c) if c is not None else dict(error="Data unavailable")
 
-    gd = [results.get("MCX_GOLD" if t=="MCX_GOLD" else t, {}) for _,t,*_ in GLOBAL_ASSETS]
+    # Summary metrics
+    gd = [results.get(t if t != "MCX_GOLD" else "MCX_GOLD", {}) for _,t,*_ in GLOBAL_ASSETS]
     inv_on  = sum(1 for d in gd if d.get("inv")=="ON")
     inv_off = sum(1 for d in gd if d.get("inv")=="OFF")
     topping = sum(1 for d in gd if d.get("inv")=="TOPPING")
@@ -307,29 +418,50 @@ def main():
 <div class="sum-val" style="color:{clr}">{val}</div>
 </div>""", unsafe_allow_html=True)
 
-    st.markdown("""<div class="legend">
-<div class="leg-item"><div class="leg-dot" style="background:#16a34a"></div> ON &mdash; Stage 2 (above rising MA)</div>
-<div class="leg-item"><div class="leg-dot" style="background:#d97706"></div> TOPPING &mdash; Stage 3 (above flat/falling MA)</div>
-<div class="leg-item"><div class="leg-dot" style="background:#7c3aed"></div> BASING &mdash; Stage 1 (below rising MA)</div>
-<div class="leg-item"><div class="leg-dot" style="background:#dc2626"></div> OFF &mdash; Stage 4 (below falling MA)</div>
-<div class="leg-item"><div class="leg-dot" style="background:#c2410c"></div> EXTENDED &mdash; 20%+ above 30wMA</div>
-</div>""", unsafe_allow_html=True)
-
+    # ── Global assets table ────────────────────────────────────────
     st.markdown('<div class="section-hdr">Global Indices &amp; Assets</div>', unsafe_allow_html=True)
-    cols = st.columns(4)
-    for i, (name, ticker, cur, ii, il, note) in enumerate(GLOBAL_ASSETS):
-        t = ticker
-        with cols[i % 4]:
-            card(name, ticker, cur, ii, il, note, results.get(t))
 
+    global_rows = ""
+    for name, ticker, cur, ii, il, note in GLOBAL_ASSETS:
+        t = ticker
+        global_rows += build_row(name, ticker, cur, ii, il, note, results.get(t))
+
+    st.markdown(f"""
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Asset</th><th>Price</th><th>Week</th>
+      <th>INV (30w)</th><th>TRA (10w)</th><th>Stage</th><th>Trend</th><th>vs 30wMA</th>
+    </tr>
+  </thead>
+  <tbody>{global_rows}</tbody>
+</table>""", unsafe_allow_html=True)
+
+    # ── ETF table ──────────────────────────────────────────────────
     st.markdown('<div class="section-hdr">Tradeable ETFs &middot; IBKR</div>', unsafe_allow_html=True)
-    cols2 = st.columns(4)
-    for i, (name, ticker, cur, ii, il, note) in enumerate(ETF_ASSETS):
-        with cols2[i % 4]:
-            card(name, ticker, cur, ii, il, note, results.get(ticker))
+
+    etf_rows = ""
+    for name, ticker, cur, ii, il, note in ETF_ASSETS:
+        etf_rows += build_row(name, ticker, cur, ii, il, note, results.get(ticker))
+
+    st.markdown(f"""
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Asset</th><th>Price</th><th>Week</th>
+      <th>INV (30w)</th><th>TRA (10w)</th><th>Stage</th><th>Trend</th><th>vs 30wMA</th>
+    </tr>
+  </thead>
+  <tbody>{etf_rows}</tbody>
+</table>""", unsafe_allow_html=True)
+
+    # ── Legend ─────────────────────────────────────────────────────
+    st.markdown('<div class="section-hdr">Signal Reference Guide</div>', unsafe_allow_html=True)
+    st.markdown(LEGEND_HTML, unsafe_allow_html=True)
 
     st.markdown(f"""<div class="footer">
-INV = 30w Weighted MA &middot; TRA = 10w Simple MA &middot; Slope: Weak &lt;0.2%/wk &middot; Normal 0.2&ndash;0.5%/wk &middot; Strong &gt;0.5%/wk &middot; Data: Yahoo Finance &middot; Refreshes hourly
+INV = 30w Weighted MA &middot; TRA = 10w Simple MA &middot; Slope bands: Weak &lt;0.2%/wk &middot; Normal 0.2&ndash;0.5%/wk &middot; Strong &gt;0.5%/wk &middot; Extended = price 20%+ above 30wMA<br>
+Data: Yahoo Finance &middot; Weekly candles (Friday close) &middot; Cache refreshes every hour &middot; {now}
 </div>""", unsafe_allow_html=True)
 
 if __name__ == "__main__":
