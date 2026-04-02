@@ -115,8 +115,6 @@ GLOBAL_ASSETS = [
     ("USD / INR",     "USDINR=X",  "INR", False, False, ""),
     ("Bitcoin",       "BTC-USD",   "USD", False, False, ""),
 ]
-    ("Bitcoin",       "BTC-USD",   "USD", False, False, ""),
-]
 
 ETF_ASSETS = [
     ("SPY",  "SPY",  "USD", False, False, "S&P 500"),
