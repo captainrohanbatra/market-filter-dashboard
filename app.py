@@ -3,6 +3,7 @@ import yfinance as yf
 import pandas as pd
 import numpy as np
 from datetime import datetime
+import html as htmllib
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -105,7 +106,7 @@ GLOBAL_ASSETS = [
     ("NSE Nifty 500", "^CRSLDX",   "INR", False, False, "India market filter"),
     ("S&P 500",       "^GSPC",     "USD", False, False, ""),
     ("NASDAQ 100",    "^NDX",      "USD", False, False, ""),
-    ("TOPIX",         "1306.T",    "JPY", False, False, "Japan broad market"),
+    ("Nikkei 225",    "^N225",     "JPY", False, False, "Japan"),
     ("Hang Seng",     "^HSI",      "HKD", False, False, ""),
     ("CSI 300",       "000300.SS", "CNY", False, False, "Mainland China"),
     ("Gold (USD)",    "GC=F",      "USD", False, False, ""),
@@ -246,15 +247,17 @@ def build_row(name, ticker, currency, is_inv, is_lev, note, d):
     pct_s   = f"{'+' if d['pct']>=0 else ''}{d['pct']:.1f}%"
     ac      = accent(d['inv'])
 
+    safe_name = htmllib.escape(name)
+    safe_note = htmllib.escape(note)
     tint = ROW_TINT.get(d['inv'], "")
     trend_cell = f'<span class="b {tb(d["trend"])}">{d["trend"]}</span>' if d['inv'] == "ON" else '<span style="font-size:12px;color:#d1d5db">&mdash;</span>'
-    note_line = f'<div class="a-tick" style="color:#6b7280;margin-top:0">{note}</div>' if note else ''
+    note_line = f'<div class="a-tick" style="color:#6b7280;margin-top:0">{safe_note}</div>' if note else ''
     return f"""<tr style="{tint}">
 <td>
   <div style="display:flex;align-items:center">
     <span class="dot" style="background:{ac}"></span>
     <div>
-      <div class="a-name">{name}{flags}</div>
+      <div class="a-name">{safe_name}{flags}</div>
       <div class="a-tick">{ticker} &middot; {currency}</div>
       {note_line}
     </div>
