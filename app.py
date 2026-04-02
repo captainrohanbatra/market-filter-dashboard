@@ -103,16 +103,18 @@ div[data-testid="stHorizontalBlock"] { gap: 0 !important; }
 
 # ── Assets ─────────────────────────────────────────────────────────
 GLOBAL_ASSETS = [
-    ("NSE Nifty 500", "^CRSLDX",   "INR", False, False, "India market filter"),
+    ("NSE Nifty 500", "^CRSLDX",   "INR", False, False, ""),
     ("S&P 500",       "^GSPC",     "USD", False, False, ""),
     ("NASDAQ 100",    "^NDX",      "USD", False, False, ""),
-    ("Nikkei 225",    "^N225",     "JPY", False, False, "Japan"),
+    ("Nikkei 225",    "^N225",     "JPY", False, False, ""),
     ("Hang Seng",     "^HSI",      "HKD", False, False, ""),
-    ("CSI 300",       "000300.SS", "CNY", False, False, "Mainland China"),
+    ("CSI 300",       "000300.SS", "CNY", False, False, ""),
     ("Gold (USD)",    "GC=F",      "USD", False, False, ""),
-    ("Gold (MCX)",    "MCX_GOLD",  "INR", False, False, "GC=F x USDINR"),
+    ("Gold (MCX)",    "MCX_GOLD",  "INR", False, False, ""),
     ("Oil WTI",       "CL=F",      "USD", False, False, ""),
-    ("USD / INR",     "USDINR=X",  "INR", False, False, "S2 = rupee weakening"),
+    ("USD / INR",     "USDINR=X",  "INR", False, False, ""),
+    ("Bitcoin",       "BTC-USD",   "USD", False, False, ""),
+]
     ("Bitcoin",       "BTC-USD",   "USD", False, False, ""),
 ]
 
